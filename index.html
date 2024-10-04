@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Card Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      /* General styling */
+      body {
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Make sure all cards are the same height and shorter */
+      .card {
+        background-image: linear-gradient(to bottom right, black, red, black);
+        border-radius: 15px;
+        overflow: hidden;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+        height: 400px; /* Shorter height */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      /* Image styling for uniformity */
+      .image-circle {
+        width: 200px;  /* Smaller width */
+        height: 200px; /* Same height to maintain a circle */
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .image:hover .image-circle {
+        transform: scale(1.1);
+      }
+
+      /* Badge styling */
+      .bg-edit {
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        background-color: #f8d7da;
+        padding: 5px 10px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+        color: black;
+        font-weight: bold;
+      }
+
+      .btn-warning {
+        color: black;
+        font-weight: bold;
+      }
+
+      .btn-warning:hover {
+        background-color: #ffcc00;
+        color: white;
+      }
+
+      .card-button a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+      }
+
+      .card-title {
+        margin-bottom: 10px;
+      }
+
+      .card-button {
+        margin-top: 10px;
+      }
+
+      /* Spiderman-specific styling */
+      .discount-text {
+        margin-bottom: 10px;
+        font-size: 0.9em; /* Slightly smaller text */
+      }
+      .strike-price {
+        font-size: 0.8em;
+        color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card position-relative">
+            <span class="bg-edit">Trending</span>
+            <img src="iron man.jfif" alt="Iron Man" class="card-img-top image-circle">
+            <div class="card-body">
+              <h5 class="card-title">Iron Man</h5>
+              <p class="card-text">Type: Costume <br> Price: $10,000</p>
+              <div class="d-grid card-button">
+                <button type="button" class="btn btn-warning"><a href="success_purchase.html">Buy Now!</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card position-relative">
+            <span class="bg-edit">Popular</span>
+            <img src="thor.jpg" alt="Thor" class="card-img-top image-circle">
+            <div class="card-body">
+              <h5 class="card-title">Thor</h5>
+              <p class="card-text">Type: Costume <br> Price: $300</p>
+              <div class="d-grid card-button">
+                <button type="button" class="btn btn-warning"><a href="success_purchase.html">Buy Now!</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 (Spiderman with discount) -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card position-relative">
+            <img src="spiderman.jpg" alt="Spider Man" class="card-img-top image-circle">
+            <div class="card-body">
+              <h5 class="card-title">Spider Man 3</h5>
+              <p class="card-text">Type: Movie</p>
+              <p class="discount-text text-warning"><b>$500</b> <span class="strike-price"><strike>$1000</strike> - 50% OFF</span></p>
+              <div class="d-grid card-button">
+                <button type="button" class="btn btn-warning"><a href="success_purchase.html">Buy Now!</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card position-relative">
+            <img src="Captain_America_Shield.webp" alt="Captain America's Shield" class="card-img-top image-circle">
+            <div class="card-body">
+              <h5 class="card-title">Captain America's Shield</h5>
+              <p class="card-text">Type: Shield <br> Price: $210</p>
+              <div class="d-grid card-button">
+                <button type="button" class="btn btn-warning"><a href="success_purchase.html">Buy Now!</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
